@@ -131,29 +131,48 @@
 // Arrays the order matters alot while in Objects it doesnot.
 //We can put Arrays Inside of objects, and We can also put objects inside objects.
 
+//Object Literal
+//var john = {
+//    firstName: 'John',
+//    lastName: 'Smith',
+//    birthYear: 1990,
+//    family: ['Jane', 'Mark','Bob', 'Emily'],
+//    job: 'teacher',
+//    isMarried: false
+//};
+//
+//console.log(john.firstName); // method 1: to output value from an object.
+//console.log(john['lastName']);// method 2
+//var x = 'birthYear';
+//console.log(john[x]);// method 3
+//john.job = 'designer';
+//
+//john['isMarried'] = true; // mutating variables
+//console.log(john);
+//
+////New object Syntax
+//var jane = new Object(); // Second way of initailizing an object using new Object() syntax.
+//jane.name = 'Jane';
+//jane.birthYear = 1969; 
+//jane['lastName'] = 'Smith';
+//console.log(jane);
+
+
+
 var john = {
     firstName: 'John',
     lastName: 'Smith',
-    birthYear: 1990,
+    birthYear: 1992,
     family: ['Jane', 'Mark','Bob', 'Emily'],
     job: 'teacher',
-    isMarried: false
+    isMarried: false,
+    calcAge: function() { //defining function inside an object which makes the function a method.
+        this.age = 2018 -  this.birthYear; //this means the current objects.
+    }
 };
 
-console.log(john.firstName); // method 1: to output value from an object.
-console.log(john['lastName']);// method 2
-var x = 'birthYear';
-console.log(john[x]);// method 3
-john.job = 'designer';
-
-john['isMarried'] = true;
+john.calcAge();
 console.log(john);
-
-var jane = new Object();
-jane.name = 'Jane';
-jane.birthYear = 1969; 
-jane['lastName'] = 'Smith';
-console.log(jane);
 
 
 
