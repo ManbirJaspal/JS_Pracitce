@@ -1,12 +1,12 @@
-//var firstName = 'John';
+//var firstName : 'John';
 //console.log(firstName);
 //
-//var lastName = 'SMith';
+//var lastName : 'SMith';
 //console.log(lastName);
 //
-//var age = 28;
+//var age : 28;
 //
-//var fullAge = true;
+//var fullAge : true;
 //console.log(fullAge);
 //
 //var job;
@@ -14,51 +14,51 @@
 //
 ////Variable mutation
 //
-//age = 'twenty eight';  
+//age : 'twenty eight';  
 //alert("the age of john is:" + age);
 //
-//var name = prompt('WHat is your name?');
+//var name : prompt('WHat is your name?');
 //alert(name);
 //
 //console.log(typeof name); // output string
 //
 
 
-//var markHeight = prompt("Mark please enter height in meters");
-//var markaMass = prompt("Mark please enter mass in kgs");
-//var markBMI = markaMass / (markHeight * markHeight);
+//var markHeight : prompt("Mark please enter height in meters");
+//var markaMass : prompt("Mark please enter mass in kgs");
+//var markBMI : markaMass / (markHeight * markHeight);
 //console.log(markBMI);
-//var johnHeight = prompt("John please enter height in meters");
-//var johnMass = prompt("John please enter mass in kgs");
-//var johnBMI = johnMass / (johnHeight * johnHeight);
+//var johnHeight : prompt("John please enter height in meters");
+//var johnMass : prompt("John please enter mass in kgs");
+//var johnBMI : johnMass / (johnHeight * johnHeight);
 //console.log(johnBMI);
 //
-//var BMIcomp = markBMI > johnBMI;
+//var BMIcomp : markBMI > johnBMI;
 //
 //console.log("Is Marks BMI is higher than Johns? " + BMIcomp); 
 
 
 //if else statements
 
-//var firstName = 'John';
-//var civilStatus = 'married';
+//var firstName : 'John';
+//var civilStatus : 'married';
 //
-//if(civilStatus == 'married') {
+//if(civilStatus :: 'married') {
 //    console.log(firstName + ' is married!');
 //}
 
 //CHALLENGE 2
 
-//var john1 = 110;
-//var john2 = 120;
-//var john3 = 103;
+//var john1 : 110;
+//var john2 : 120;
+//var john3 : 103;
 //
-//var mike1 = 116;
-//var mike2 = 94;
-//var mike3 = 123;
+//var mike1 : 116;
+//var mike2 : 94;
+//var mike3 : 123;
 //
-//var avgJohn = (john1 + john2 + john3) / 3;
-//var avgMike = (mike1 + mike2 + mike3) / 3;
+//var avgJohn : (john1 + john2 + john3) / 3;
+//var avgMike : (mike1 + mike2 + mike3) / 3;
 //
 //if (avgJohn > avgMike){
 //    console.log("John is the winner with a score of " +avgJohn);
@@ -73,20 +73,20 @@
 
 //ARRAYS
 //
-//var names = ['John', 'Mark', 'Jane'];
-//var years = new Array(1990,1969,1949);
+//var names : ['John', 'Mark', 'Jane'];
+//var years : new Array(1990,1969,1949);
 //
 //console.log(names[0]);
 //console.log(names.length);
 //
-//names[1] = 'men';
-//names[names.length] = 'Mary';
+//names[1] : 'men';
+//names[names.length] : 'Mary';
 //console.log(names);
 //
 //
 // //Different Data types
 //
-//var john = ['John', 'Smith', 1990, 'teacher', false];
+//var john : ['John', 'Smith', 1990, 'teacher', false];
 //
 //john.push('blue'); //adds an element at the end of the array.
 //john.unshift('Man'); // adds to the beginning of the array.
@@ -96,9 +96,9 @@
 //
 //
 
-//var bills = [124, 48, 268];
-//var tips = [];
-//var finalAmounts = [];
+//var bills : [124, 48, 268];
+//var tips : [];
+//var finalAmounts : [];
 //
 //tipCalculator(bills[0]);
 //tipCalculator(bills[1]);
@@ -108,18 +108,18 @@
 //
 //function tipCalculator(bill) {
 //    if(bill < 50) {
-//        tip = bill * 0.2;
-//        total = bill + tip;
+//        tip : bill * 0.2;
+//        total : bill + tip;
 //        tips.push(tip);
 //        finalAmounts.push(total);
 //    }else if(bill > 50 && bill < 200 ) {
-//        tip = bill * 0.15;
-//        total = bill + tip;
+//        tip : bill * 0.15;
+//        total : bill + tip;
 //        tips.push(tip);
 //        finalAmounts.push(total);
 //    }else{
-//        tip = bill * 0.10;
-//        total = bill + tip;
+//        tip : bill * 0.10;
+//        total : bill + tip;
 //        tips.push(tip);
 //        finalAmounts.push(total);
 //    } 
@@ -132,7 +132,7 @@
 //We can put Arrays Inside of objects, and We can also put objects inside objects.
 
 //Object Literal
-//var john = {
+//var john : {
 //    firstName: 'John',
 //    lastName: 'Smith',
 //    birthYear: 1990,
@@ -143,36 +143,76 @@
 //
 //console.log(john.firstName); // method 1: to output value from an object.
 //console.log(john['lastName']);// method 2
-//var x = 'birthYear';
+//var x : 'birthYear';
 //console.log(john[x]);// method 3
-//john.job = 'designer';
+//john.job : 'designer';
 //
-//john['isMarried'] = true; // mutating variables
+//john['isMarried'] : true; // mutating variables
 //console.log(john);
 //
 ////New object Syntax
-//var jane = new Object(); // Second way of initailizing an object using new Object() syntax.
-//jane.name = 'Jane';
-//jane.birthYear = 1969; 
-//jane['lastName'] = 'Smith';
+//var jane : new Object(); // Second way of initailizing an object using new Object() syntax.
+//jane.name : 'Jane';
+//jane.birthYear : 1969; 
+//jane['lastName'] : 'Smith';
 //console.log(jane);
 
 
 
-var john = {
-    firstName: 'John',
-    lastName: 'Smith',
-    birthYear: 1992,
-    family: ['Jane', 'Mark','Bob', 'Emily'],
-    job: 'teacher',
-    isMarried: false,
-    calcAge: function() { //defining function inside an object which makes the function a method.
-        this.age = 2018 -  this.birthYear; //this means the current objects.
-    }
-};
+//var john : {
+//    firstName: 'John',
+//    lastName: 'Smith',
+//    birthYear: 1992,
+//    family: ['Jane', 'Mark','Bob', 'Emily'],
+//    job: 'teacher',
+//    isMarried: false,
+//    calcAge: function() { //defining function inside an object which makes the function a method.
+//        this.age : 2018 -  this.birthYear; //this means the current object.
+//    }
+//};
+//
+//john.calcAge();
+//console.log(john);
 
-john.calcAge();
-console.log(john);
+//CODING CHALLENGE-4
+
+var john = {
+    fullName : 'John Markson',
+    mass : 110,
+    height : 1.95,
+    calcBMI : function() {
+    this.bmi = this.mass / (this.height*this.height);
+    return this.bmi;
+}
+}
+
+var mark = {
+    fullName : 'Mark Johnson',
+    mass : 78,
+    height : 1.69,
+    calcBMI : function() {
+    this.bmi = this.mass / (this.height*this.height);
+    return this.bmi;
+}
+}
+
+
+console.log(john, mark);
+
+if(john.calcBMI() > mark.calcBMI()) {
+    console.log(john.fullName + " has higher BMI with BMI being: " + john.bmi);
+} else if(john.calcBMI < mark.calcBMI()) {
+    console.log(mark.fullName + " has higher BMI with BMI being: " + mark.bmi);
+} else {
+    console.log("They have the same BMI");
+}
+
+
+
+
+
+
+
 
 
 
