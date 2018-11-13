@@ -72,29 +72,58 @@
 // FUNCTIONS
 
 //ARRAYS
+//
+//var names = ['John', 'Mark', 'Jane'];
+//var years = new Array(1990,1969,1949);
+//
+//console.log(names[0]);
+//console.log(names.length);
+//
+//names[1] = 'men';
+//names[names.length] = 'Mary';
+//console.log(names);
+//
+//
+// //Different Data types
+//
+//var john = ['John', 'Smith', 1990, 'teacher', false];
+//
+//john.push('blue'); //adds an element at the end of the array.
+//john.unshift('Man'); // adds to the beginning of the array.
+//john.pop(); // This removes the element from the end.
+//john.shift(); // This removes the first element of the array.
+//john.indexOf(1990); // This retrieves the position of the entered element.
+//
+//
 
-var names = ['John', 'Mark', 'Jane'];
-var years = new Array(1990,1969,1949);
+var bills = [124, 48, 268];
+var tips = [];
+var finalAmounts = [];
 
-console.log(names[0]);
-console.log(names.length);
+tipCalculator(bills[0]);
+tipCalculator(bills[1]);
+tipCalculator(bills[2]);
+console.log(tips);
+console.log(finalAmounts);
 
-names[1] = 'men';
-names[names.length] = 'Mary';
-console.log(names);
-
-
- //Different Data types
-
-var john = ['John', 'Smith', 1990, 'teacher', false];
-
-john.push('blue'); //adds an element at the end of the array.
-john.unshift('Man'); // adds to the beginning of the array.
-john.pop(); // This removes the element from the end.
-john.shift(); // This removes the first element of the array.
-john.indexOf(1990); // This retrieves the position of the entered element.
-
-
+function tipCalculator(bill) {
+    if(bill < 50) {
+        tip = bill * 0.2;
+        total = bill + tip;
+        tips.push(tip);
+        finalAmounts.push(total);
+    }else if(bill > 50 && bill < 200 ) {
+        tip = bill * 0.15;
+        total = bill + tip;
+        tips.push(tip);
+        finalAmounts.push(total);
+    }else{
+        tip = bill * 0.10;
+        total = bill + tip;
+        tips.push(tip);
+        finalAmounts.push(total);
+    } 
+}
 
 
 
