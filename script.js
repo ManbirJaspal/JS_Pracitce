@@ -96,34 +96,66 @@
 //
 //
 
-var bills = [124, 48, 268];
-var tips = [];
-var finalAmounts = [];
+//var bills = [124, 48, 268];
+//var tips = [];
+//var finalAmounts = [];
+//
+//tipCalculator(bills[0]);
+//tipCalculator(bills[1]);
+//tipCalculator(bills[2]);
+//console.log(tips);
+//console.log(finalAmounts);
+//
+//function tipCalculator(bill) {
+//    if(bill < 50) {
+//        tip = bill * 0.2;
+//        total = bill + tip;
+//        tips.push(tip);
+//        finalAmounts.push(total);
+//    }else if(bill > 50 && bill < 200 ) {
+//        tip = bill * 0.15;
+//        total = bill + tip;
+//        tips.push(tip);
+//        finalAmounts.push(total);
+//    }else{
+//        tip = bill * 0.10;
+//        total = bill + tip;
+//        tips.push(tip);
+//        finalAmounts.push(total);
+//    } 
+//}
 
-tipCalculator(bills[0]);
-tipCalculator(bills[1]);
-tipCalculator(bills[2]);
-console.log(tips);
-console.log(finalAmounts);
+//Objects and properties
 
-function tipCalculator(bill) {
-    if(bill < 50) {
-        tip = bill * 0.2;
-        total = bill + tip;
-        tips.push(tip);
-        finalAmounts.push(total);
-    }else if(bill > 50 && bill < 200 ) {
-        tip = bill * 0.15;
-        total = bill + tip;
-        tips.push(tip);
-        finalAmounts.push(total);
-    }else{
-        tip = bill * 0.10;
-        total = bill + tip;
-        tips.push(tip);
-        finalAmounts.push(total);
-    } 
-}
+// With objects we define key value pairs which means each value has a name which is called the key.
+// Arrays the order matters alot while in Objects it doesnot.
+//We can put Arrays Inside of objects, and We can also put objects inside objects.
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark','Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+
+console.log(john.firstName); // method 1: to output value from an object.
+console.log(john['lastName']);// method 2
+var x = 'birthYear';
+console.log(john[x]);// method 3
+john.job = 'designer';
+
+john['isMarried'] = true;
+console.log(john);
+
+var jane = new Object();
+jane.name = 'Jane';
+jane.birthYear = 1969; 
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+
 
 
 
