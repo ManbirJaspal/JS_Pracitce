@@ -24,15 +24,25 @@
 //
 
 
-var markHeight = prompt("Mark please enter height in meters");
-var markaMass = prompt("Mark please enter mass in kgs");
-var markBMI = markaMass / (markHeight * markHeight);
-console.log(markBMI);
-var johnHeight = prompt("John please enter height in meters");
-var johnMass = prompt("John please enter mass in kgs");
-var johnBMI = johnMass / (johnHeight * johnHeight);
-console.log(johnBMI);
+//var markHeight = prompt("Mark please enter height in meters");
+//var markaMass = prompt("Mark please enter mass in kgs");
+//var markBMI = markaMass / (markHeight * markHeight);
+//console.log(markBMI);
+//var johnHeight = prompt("John please enter height in meters");
+//var johnMass = prompt("John please enter mass in kgs");
+//var johnBMI = johnMass / (johnHeight * johnHeight);
+//console.log(johnBMI);
+//
+//var BMIcomp = markBMI > johnBMI;
+//
+//console.log("Is Marks BMI is higher than Johns? " + BMIcomp); 
 
-var BMIcomp = markBMI > johnBMI;
 
-console.log("Is Marks BMI is higher than Johns? " + BMIcomp); 
+//if else statements
+
+var firstName = 'John';
+var civilStatus = 'married';
+
+if(civilStatus == 'married') {
+    console.log(firstName + ' is married!');
+}
