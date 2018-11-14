@@ -96,34 +96,34 @@
 //
 //
 
-//var bills : [124, 48, 268];
-//var tips : [];
-//var finalAmounts : [];
-//
-//tipCalculator(bills[0]);
-//tipCalculator(bills[1]);
-//tipCalculator(bills[2]);
-//console.log(tips);
-//console.log(finalAmounts);
-//
-//function tipCalculator(bill) {
-//    if(bill < 50) {
-//        tip : bill * 0.2;
-//        total : bill + tip;
-//        tips.push(tip);
-//        finalAmounts.push(total);
-//    }else if(bill > 50 && bill < 200 ) {
-//        tip : bill * 0.15;
-//        total : bill + tip;
-//        tips.push(tip);
-//        finalAmounts.push(total);
-//    }else{
-//        tip : bill * 0.10;
-//        total : bill + tip;
-//        tips.push(tip);
-//        finalAmounts.push(total);
-//    } 
-//}
+    //var bills : [124, 48, 268];
+    //var tips : [];
+    //var finalAmounts : [];
+    //
+    //tipCalculator(bills[0]);
+    //tipCalculator(bills[1]);
+    //tipCalculator(bills[2]);
+    //console.log(tips);
+    //console.log(finalAmounts);
+    //
+    //function tipCalculator(bill) {
+    //    if(bill < 50) {
+    //        tip : bill * 0.2;
+    //        total : bill + tip;
+    //        tips.push(tip);
+    //        finalAmounts.push(total);
+    //    }else if(bill > 50 && bill < 200 ) {
+    //        tip : bill * 0.15;
+    //        total : bill + tip;
+    //        tips.push(tip);
+    //        finalAmounts.push(total);
+    //    }else{
+    //        tip : bill * 0.10;
+    //        total : bill + tip;
+    //        tips.push(tip);
+    //        finalAmounts.push(total);
+    //    } 
+    //}
 
 //Objects and properties
 
@@ -176,36 +176,75 @@
 
 //CODING CHALLENGE-4
 
-var john = {
-    fullName : 'John Markson',
-    mass : 110,
-    height : 1.95,
-    calcBMI : function() {
-    this.bmi = this.mass / (this.height*this.height);
-    return this.bmi;
-}
+//var john = {
+//    fullName : 'John Markson',
+//    mass : 110,
+//    height : 1.95,
+//    calcBMI : function() {
+//    this.bmi = this.mass / (this.height*this.height);
+//    return this.bmi;
+//}
+//}
+//
+//var mark = {
+//    fullName : 'Mark Johnson',
+//    mass : 78,
+//    height : 1.69,
+//    calcBMI : function() {
+//    this.bmi = this.mass / (this.height*this.height);
+//    return this.bmi;
+//}
+//}
+//
+//
+//console.log(john, mark);
+//
+//if(john.calcBMI() > mark.calcBMI()) {
+//    console.log(john.fullName + " has higher BMI with BMI being: " + john.bmi);
+//} else if(john.calcBMI < mark.calcBMI()) {
+//    console.log(mark.fullName + " has higher BMI with BMI being: " + mark.bmi);
+//} else {
+//    console.log("They have the same BMI");
+//}
+//
+
+
+//LOOPS AND ITERATION  
+
+//var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+//
+//for(i = john.length - 1; i >= 0 ; i--) {
+//    console.log(john[i]);
+//}
+
+//CODING CHALLENGE
+
+var expense = {
+   bills : [124, 48, 268, 180, 42],
+   tipCalc: function() {
+        this.tips = [];
+        this.totalWTip = [];
+        for (i = 0; i < this.bills.length; i++){
+        var percentage;
+        if(this.bills[i] < 50) {
+         percentage = .2;
+    } else if(this.bills[i] > 50 && this.bills[i] < 200 ) {
+        percentage = .15;
+    } else{
+        percentage = .1; 
+    }
+            this.tips[i] = this.bills[i] * percentage;
+            this.totalWTip[i] = this.bills[i] + this.bills[i] * percentage;
+        }
+           
+   
+   }
+   
 }
 
-var mark = {
-    fullName : 'Mark Johnson',
-    mass : 78,
-    height : 1.69,
-    calcBMI : function() {
-    this.bmi = this.mass / (this.height*this.height);
-    return this.bmi;
-}
-}
 
-
-console.log(john, mark);
-
-if(john.calcBMI() > mark.calcBMI()) {
-    console.log(john.fullName + " has higher BMI with BMI being: " + john.bmi);
-} else if(john.calcBMI < mark.calcBMI()) {
-    console.log(mark.fullName + " has higher BMI with BMI being: " + mark.bmi);
-} else {
-    console.log("They have the same BMI");
-}
+expense.tipCalc();
+console.log(expense);
 
 
 
