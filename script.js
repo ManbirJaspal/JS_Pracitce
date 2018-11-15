@@ -248,15 +248,31 @@
 
 //HOISTING
 
-calculateAge(1965);
+//calculateAge(1965);
+//function calculateAge(year) {
+//    console.log(2016 - year);
+//
+//}
+
+
+//THIS keyword
+
+calculateAge(1985);
 function calculateAge(year) {
     console.log(2016 - year);
-
+    console.log(this)
 }
 
 
-
-
+var john = {
+    name: 'John',
+    yearOfBirth: 1990,
+    calculateAge: function() { 
+        console.log(this);
+        console.log(2016 - this.yearOfBirth);
+    }
+}
+ john.calculateAge()
 
 
 
