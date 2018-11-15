@@ -162,8 +162,7 @@
 //var john : {
 //    firstName: 'John',
 //    lastName: 'Smith',
-//    birthYear: 1992,
-//    family: ['Jane', 'Mark','Bob', 'Emily'],
+//    birthYear: 1992,2ds
 //    job: 'teacher',
 //    isMarried: false,
 //    calcAge: function() { //defining function inside an object which makes the function a method.
@@ -176,7 +175,7 @@
 
 //CODING CHALLENGE-4
 
-//var john = {
+//var john = { 
 //    fullName : 'John Markson',
 //    mass : 110,
 //    height : 1.95,
@@ -219,43 +218,41 @@
 
 //CODING CHALLENGE
 
-var expense = {
-   bills : [124, 48, 268, 180, 42],
-   tipCalc: function() {
-        this.tips = [];
-        this.totalWTip = [];
-        for (i = 0; i < this.bills.length; i++){
-        var percentage;
-        if(this.bills[i] < 50) {
-         percentage = .2;
-    } else if(this.bills[i] > 50 && this.bills[i] < 200 ) {
-        percentage = .15;
-    } else{
-        percentage = .1; 
-    }
-            this.tips[i] = this.bills[i] * percentage;
-            this.totalWTip[i] = this.bills[i] + this.bills[i] * percentage;
-        }
-           
-   
-   }
-   
+//var expense = {
+//   bills : [124, 48, 268, 180, 42],
+//   tipCalc: function() {
+//        this.tips = [];
+//        this.totalWTip = [];
+//        for (i = 0; i < this.bills.length; i++){
+//        var percentage;
+//        if(this.bills[i] < 50) {
+//         percentage = .2;
+//    } else if(this.bills[i] > 50 && this.bills[i] < 200 ) {
+//        percentage = .15;
+//    } else{
+//        percentage = .1; 
+//    }
+//            this.tips[i] = this.bills[i] * percentage;
+//            this.totalWTip[i] = this.bills[i] + this.bills[i] * percentage;
+//        }
+//           
+//   
+//   }
+//   
+//}
+//
+//
+//expense.tipCalc();
+//console.log(expense);
+
+
+//HOISTING
+
+calculateAge(1965);
+function calculateAge(year) {
+    console.log(2016 - year);
+
 }
-
-
-expense.tipCalc();
-console.log(expense);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
