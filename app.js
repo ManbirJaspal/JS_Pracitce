@@ -1,8 +1,6 @@
 var scores,roundScore, activePlayer;
 
-scores = [0,0];
-roundScore = 0;
-activePlayer = 0;
+init();
 
 dice = Math.floor(Math.random() * 6) + 1; // Math.random gives a random value betweem zero and one. we multiply it with 6 and then add one to get a number                                                 between one and 6. 
                                             //Math.floor function here makes a decimal number into a whole number.
@@ -21,7 +19,7 @@ console.log(dice);
 
 
 
-document.querySelector('.dice').style.display = 'none'; //here we access the style method and then the css
+//document.querySelector('.dice').style.display = 'none'; //here we access the style method and then the css
                                                         //property that i want to change(diplay, setting to none).
 
 
@@ -90,7 +88,7 @@ function nextPlayer() {
         document.getElementById('current-0').textContent = '0';
         document.getElementById('current-1').textContent = '0';
         
-        //Now we need to change the class of whatever players turn it is to active (to show the red dot next to player and to show the player in BOLD. We use the .classList function and its various attributes to make changes to the class we select as shown below.
+        //Now we need to change the class of whatever players turn, to active (to show the red dot next to player and to show the player in BOLD. We use the .classList function and its various attributes to make changes to the class we select as shown below.
 //        document.querySelector('.player-0-panel').classList.remove('active'); 
 //        document.querySelector('.player-1-panel').classList.add('active'); 
         
@@ -103,6 +101,27 @@ function nextPlayer() {
         document.querySelector('.dice').style.display = 'none'; //here we are setting the display property of the dice image to none, if one is rolled.
 }
 
+document.querySelector('.btn-new').addEventListener('click', init); //event listener for the new-game button click.
 
+
+function init() { // here we are creating a game initializer, everything will be set to the default state when this function is called.
+     scores = [0,0];
+    activePlayer = 0;
+    roundScore = 0;
+    
+    document.querySelector('.dice').style.display = 'none'; 
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.getElementById('name-0').textContent = 'Player 1'; 
+    document.getElementById('name-1').textContent = 'Player 2'; 
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.add('active');
+
+}
 
 
