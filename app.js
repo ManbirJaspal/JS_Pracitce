@@ -54,6 +54,37 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         document.querySelector('#current-' + activePlayer).textContent = roundScore; //using .textContent.
     } else {
          //nextPlayer
+        nextPlayer();
+    }
+});
+    //IMPLEMENTING THE HOLD FUNCTION
+    
+    document.querySelector('.btn-hold').addEventListener('click', function() {
+        //1. add current score to player global score
+        scores[activePlayer] += roundScore; //updating scores in the scores array.
+        
+        //2. update the UI
+        document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer]; 
+
+        
+        
+        
+        //3. check if player won the game, then add the winner class to player- -panel and remove the active player status(red dot)
+        if (scores[activePlayer] >= 100) {
+            document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+            document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+            
+        } else {
+            nextPlayer();
+        }
+
+    });
+
+
+function nextPlayer() {
+         //nextPlayer
         activePlayer === 0 ? activePlayer = 1 : activePlayer = 0; //using ternary operator instead of if else to change player status.
         roundScore = 0;
         document.getElementById('current-0').textContent = '0';
@@ -70,15 +101,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         document.querySelector('.player-1-panel').classList.toggle('active'); 
         
         document.querySelector('.dice').style.display = 'none'; //here we are setting the display property of the dice image to none, if one is rolled.
-        
-        
+}
 
-
-        
-
-    }
-
-});
 
 
 
