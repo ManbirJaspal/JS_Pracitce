@@ -43,10 +43,40 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     
     //3. update the round score only if the roll number was not a 1.
     //here we use getelementbyid instead of querySelector. Apparently it is faster.
-    document.getElementById('score-0').textContent = '0';
-    document.getElementById('score-1').textContent = '0';
-    document.getElementById('current-0').textContent = '0';
-    document.getElementById('current-1').textContent = '0';
+//    document.getElementById('score-0').textContent = '0';
+//    document.getElementById('score-1').textContent = '0';
+//    document.getElementById('current-0').textContent = '0';
+//    document.getElementById('current-1').textContent = '0';
+    
+    if (dice !== 1) {
+        //Add score
+        roundScore += dice;
+        document.querySelector('#current-' + activePlayer).textContent = roundScore; //using .textContent.
+    } else {
+         //nextPlayer
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0; //using ternary operator instead of if else to change player status.
+        roundScore = 0;
+        document.getElementById('current-0').textContent = '0';
+        document.getElementById('current-1').textContent = '0';
+        
+        //Now we need to change the class of whatever players turn it is to active (to show the red dot next to player and to show the player in BOLD. We use the .classList function and its various attributes to make changes to the class we select as shown below.
+//        document.querySelector('.player-0-panel').classList.remove('active'); 
+//        document.querySelector('.player-1-panel').classList.add('active'); 
+        
+        //Instead of using add and remove as shown above we are using the toggle. What toggle does is that it adds the class if it doesnt exist
+        // and removes it, if it does exist.
+        
+        document.querySelector('.player-0-panel').classList.toggle('active'); 
+        document.querySelector('.player-1-panel').classList.toggle('active'); 
+        
+        document.querySelector('.dice').style.display = 'none'; //here we are setting the display property of the dice image to none, if one is rolled.
+        
+        
+
+
+        
+
+    }
 
 });
 
