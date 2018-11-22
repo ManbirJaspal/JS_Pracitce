@@ -30,12 +30,15 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     //1. RANDOM NUMBER
     
     var dice = Math.floor(Math.random() * 6) + 1; // we are declaring the variable in this scope
+    var dice2 = Math.floor(Math.random() * 6) + 1;
     
     //2. Display the result
     var diceDOM = document.querySelector('.dice'); // here we are putting document.querySelector into a variable for ease of reuasablity.
+    var diceDOM2 = document.querySelector('.dice2');
     diceDOM.style.display = 'block';
     diceDOM.src = 'dice-' + dice + '.png';
-        //accessing the img tag via the src, and changing the value of src using JS.
+    diceDOM2.style.display = 'block';
+    diceDOM2.src = 'dice-' + dice2 + '.png'; //accessing the img tag via the src, and changing the value of src using JS.
     
     
     //3. update the round score only if the roll number was not a 1.
@@ -45,9 +48,9 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 //    document.getElementById('current-0').textContent = '0';
 //    document.getElementById('current-1').textContent = '0';
     
-    if (dice !== 1) {
+    if (dice !== 1 && dice2 !== 1 ) {
         //Add score
-        roundScore += dice;
+        roundScore += dice + dice2;
         document.querySelector('#current-' + activePlayer).textContent = roundScore; //using .textContent.
     } else {
          nextPlayer();
@@ -69,6 +72,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         if (scores[activePlayer] >= winScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.dice2').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
             gamePlaying = false;
@@ -98,9 +102,11 @@ function nextPlayer() {
         document.querySelector('.player-1-panel').classList.toggle('active'); 
         
         document.querySelector('.dice').style.display = 'none'; //here we are setting the display property of the dice image to none, if one is rolled.
+    
+        document.querySelector('.dice2').style.display = 'none';
+}
 
 document.querySelector('.btn-new').addEventListener('click', init); //event listener for the new-game button click.
-}
 
 
 function init() { // here we are creating a game initializer, everything will be set to the default state when this function is called.
@@ -109,7 +115,12 @@ function init() { // here we are creating a game initializer, everything will be
     roundScore = 0;
     gamePlaying = true; // adding a status variable, we need this so that the rest of buttons work only when a player is playing.
     
-    document.querySelector('.dice').style.display = 'none';  
+    
+    document.getElementById('input').style.visibility = "visible";
+    document.getElementById('input-btn').style.visibility = "visible";
+    document.getElementById('lbl').style.visibility = "visible";
+    document.querySelector('.dice').style.display = 'none'; 
+    document.querySelector('.dice2').style.display = 'none'; 
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
@@ -121,9 +132,17 @@ function init() { // here we are creating a game initializer, everything will be
     document.querySelector('.player-0-panel').classList.remove('active');
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
+
 }
 
+// *NOTE: do not use button tag in chrome for event listener triggers. //It reloads the page.
 
-
-
-
+//Challenge part 2
+document.querySelector('#input-btn').addEventListener('click', function() {
+   var input = document.getElementById('input').value;
+    winScore = input;
+    document.getElementById('input').style.visibility = "hidden";
+    document.getElementById('input-btn').style.visibility = "hidden";
+    document.getElementById('lbl').style.visibility = "hidden";
+    
+});
